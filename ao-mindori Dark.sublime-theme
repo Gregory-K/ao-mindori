@@ -1,0 +1,418 @@
+// last.250813
+// init.240417
+{
+  "extends": "ao-mindori Base.hidden-theme",
+//
+// ~ VARIABLES
+//
+  "variables":
+  {
+    // ~~ BASE
+    //
+
+    "base_hue": "hsl(200, 9%, 32%)",  // def hsl(215, 10%, 50%)
+    "base_tint": "white",
+
+    "ui_bg":   "color(var(base_hue) l(11%))",  // def l20% (affects bottom panel)
+    "text_fg": "hsl(0, 0%, 85%)",
+    "link_fg": "hsl(176, 29%, 53%)",  // def hsl(215, 45%, 65%)
+
+    "c_scheme_tint": "hsl(200, 19%, 18%)",  // ao-mindori scheme
+
+    // ~~ CUSTOM COLOURS
+    //
+
+    "c_red":   "rgb(250, 130, 130)",
+    "c_white": "rgb(255, 255, 255)",
+
+    // Teal
+    // "c_sign_strong": "rgb(100, 255, 218)",
+    // "c_sign_lite":   "rgb(160, 250, 240)",
+    // "c_sign":        "rgb(128, 203, 196)",
+    // "c_sign_dark":   "rgb(100, 170, 165)",
+    // Greener
+    "c_sign_strong": "hsl(135, 68.8%, 69.6%)",
+    "c_sign_lite":   "hsl(135, 37.5%, 80.4%)",
+    "c_sign":        "hsl(135, 31.3%, 64.9%)",
+    "c_sign_dark":   "hsl(135, 18.8%, 52.9%)",
+
+    "c_header": "hsl(180, 18.8%, 40%)",
+    "c_folder": "hsl(135, 6%, 40%)",
+
+    "c_grey_dark": "hsl(200, 19%, 16%)",
+    "c_grey_5":    "hsl(157, 0%, 50%)",
+    "c_grey_6":    "hsl(157, 6%, 63%)",
+    "c_grey_7":    "hsl(157, 13%, 73%)",
+
+    // ~~ SCROLL BARS
+    // "scroll_bar_dark_bg": "var(c_sign_lite)",  // def White
+    // "scroll_bar_puck_dark_bg": "var(c_sign_lite)",
+
+    // ~~ SIDEBAR
+    //
+
+    // "sidebar_bg": "color(var(base_hue) l(13%))",
+    "sidebar_bg": "var(ui_bg)",  // def
+    "sidebar_row_selected": "color(var(base_hue) l(23%))",
+
+    "sidebar_heading": "var(c_header)",
+    "sidebar_heading_shadow": "transparent",
+    "sidebar_label": "var(c_grey_6)",
+    "sidebar_label_selected": "hsl(0, 0%, 90%)",
+    "sidebar_label_ignored": "var(c_grey_5)",
+
+    "sidebar_scroll_bar_bg": "var(scroll_bar_dark_bg)",
+    "sidebar_scroll_bar_puck_bg": "var(scroll_bar_puck_dark_bg)",
+
+    // ~~ STATUSBAR
+    //
+
+    // "status_bar_bg": "var(ui_bg)",  // def
+    "status_bar_bg": "color(var(base_hue) l(15%))",
+
+    // "status_bar_label_color": "var(c_sign_dark)",
+    "status_bar_label_color": "var(c_grey_6)",
+    // "status_bar_label_shadow": "transparent",  // def for dark
+    "status_bar_label_shadow": "color(black a(0.2))",  // emboss, def a0.18
+
+    // ~~ PANELS
+    //
+
+    // "panel_bg": "var(ui_bg)",  // def
+    "panel_bg": "color(var(base_hue) l(13%))",
+    "switch_project_bg": "var(ui_bg)",
+
+    "progress_bar_bg": "color(var(base_tint) a(0.06))",
+    "progress_bar_fg": "color(var(base_hue) l(40%))",
+    "dialog_bg": "color(var(ui_bg)",
+    "dialog_button_bg": "color(var(ui_bg) l(17%))", // def color(var(base_hue) l(50%))
+    // ~~~ Input Field
+    "text_widget_dark_modifier": "s(9.7%) l(- 5%)",  // def l-5, alt l-6.2, ref: widget dark_grey
+    "text_widget_light_modifier": "s(9.7%) l(- 2%)",  // altered & used for panel buttons hover
+    "tool_tip_fg": "hsl(0, 0%, 25%)",
+    "tool_tip_bg": "c_grey_dark", // extra, no use (?)
+    // ~~~ Buttons & Icons
+    // "button_label_shadow": "transparent",  // def for dark
+    "button_label_shadow": "color(black a(0.2))",  // emboss, def a0.18
+    "button_bg": "color(var(ui_bg) l(17%))",  // def base_hue as a base var
+    "button_bg_hover": "color(var(ui_bg) l(19%))",  // extra
+    "icon_button_highlight": "color(var(base_hue) l(20%))",
+
+    // ~~ COMMAND PALETTE
+    //
+
+    // "overlay_bg": "var(ui_bg)",  // def
+    "overlay_bg": "color(var(base_hue) l(13%))",
+
+    "quick_panel_label_color": "color(var(base_hue) l(70%))",
+    "quick_panel_path_label_color": "color(var(base_hue) l(55%))",
+    "quick_panel_matched_label_color": "var(c_sign_lite)",
+    "quick_panel_matched_path_label_color": "var(c_grey_7)",
+
+    "quick_panel_selected_row_bg": "color(var(base_hue) l(20%))",
+    "quick_panel_selected_label_color": "color(var(base_hue) l(90%))",
+    "quick_panel_selected_path_label_color": "color(var(base_hue) l(70%))",
+    "quick_panel_selected_matched_label_color": "var(quick_panel_matched_label_color)",
+    "quick_panel_selected_matched_path_label_color": "var(c_white)",
+
+    "quick_panel_link_color": "var(link_fg)",
+
+    // ~~ TABS
+    //
+
+    "tabset_dark_tint_mod": "color(white a(0.20))",
+    "tabset_dark_bg": "color(var(--background) blend(white 80%))",
+    "tabset_medium_dark_tint_mod": "color(white a(0.15))",
+    // tab-bar bg
+    "tabset_medium_dark_bg": "color(var(--background) blend(white 87%))",  // def 85%
+    "tabset_medium_tint_mod": "color(black a(0.25))",
+    "tabset_medium_bg": "color(var(--background) blend(black 75%))",
+    "tabset_light_tint_mod": "color(black a(0.20))",
+    "tabset_light_bg": "color(var(--background) blend(black 80%))",
+
+    // ~~ MISC - REST
+    //
+
+    // The angled styles aren't great, but preserved since it is easier
+    // to tweak them a little than prevent the "angled" style rules from
+    // applying
+    "file_tab_angled_unselected_dark_tint": "color(white a(0.07))",
+    "file_tab_angled_unselected_medium_dark_tint": "color(white a(0.07))",
+    "file_tab_angled_unselected_medium_tint": "color(black a(0.13))",
+    "file_tab_angled_unselected_light_tint": "color(black a(0.12))",
+
+    "file_tab_angled_unselected_label_color": "hsl(0, 0%, 60%)",
+    "file_tab_angled_unselected_label_shadow": "transparent",
+    "file_tab_angled_unselected_medium_label_color": "hsl(0, 0%, 75%)",
+    "file_tab_angled_unselected_medium_label_shadow": "transparent",
+    "file_tab_angled_unselected_light_label_color": "hsl(0, 0%, 45%)",
+    "file_tab_angled_unselected_light_label_shadow": "transparent",
+
+    // Radio buttons
+    "radio_back": "var(--background)",
+    "radio_selected": "var(--bluish)",
+    "radio_border-selected": "var(--bluish)",
+
+    // Checkbox buttons
+    "checkbox_back": "var(--background)",
+    "checkbox_selected": "var(--bluish)",
+    "checkbox_border-selected": "var(--bluish)",
+  },
+
+//
+// ~ RULES
+//
+
+  "rules":
+  [
+    {
+      "class": "title_bar",
+      "style": "dark"
+    },
+    // ~~ TABS
+    //
+
+    {
+      "class": "tab_label",
+      "font.size": 12,
+      // "font.face": "Segoe UI SemiBold",
+      // "font.face": "Lucida Sans Unicode",
+      "font.face": "JetBrains Mono NL",
+      // "font.face": "Cascadia Code",
+    },
+
+    // ~~~ Tab Close Button
+
+    {
+      "class": "tab_close_button",
+      "attributes": ["hover"],
+      "parents": [{"class": "tab_control", "attributes": ["!selected"]}],
+      "layer0.tint": "var(c_red)",
+      "layer0.opacity": "var(file_tab_close_hover_opacity)",
+    },
+    {
+      "class": "tab_close_button",
+      "attributes": ["hover"],
+      "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+      "layer0.tint": "var(c_red)",
+      "layer0.opacity": "var(file_tab_close_selected_hover_opacity)",
+    },
+
+    // ~~ SIDEBAR
+    //
+
+    // ~~~ Heading
+
+    {
+      "class": "sidebar_heading",
+      "shadow_offset": [2, 2],
+      "font.bold": false,
+      "font.size": 14,
+      // "font.face": "Segoe UI SemiBold",
+      // "font.face": "Lucida Sans Unicode",
+      "font.face": "JetBrains Mono NL"
+    },
+
+    // ~~~ Label
+
+    {
+      "class": "sidebar_label",
+      "font.size": 12,
+      // "font.face": "Segoe UI SemiBold",
+      // "font.face": "Lucida Sans Unicode",
+      "font.face": "JetBrains Mono NL",
+      // "font.bold": true,
+    },
+    {
+      "class": "sidebar_label",
+      "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+      "color": "var(c_white)",
+    },
+    // {
+    //   "class": "sidebar_label",
+    //   "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+    //   "color": "var(c_grey_7)",
+    // },
+    {
+      "class": "sidebar_label",
+      "parents": [{"class": "tree_row", "attributes": ["expandable", "hover"]}],
+      "color": "var(c_white)",
+    },
+    {
+      "class": "sidebar_label",
+      "parents": [{"class": "tree_row", "attributes": ["expanded"]}],
+      "color": "var(c_sign_lite)",
+    },
+    {
+      "class": "sidebar_label",
+      "parents": [{"class": "tree_row", "attributes": ["expanded", "hover"]}],
+      "color": "var(c_sign_strong)",
+    },
+
+    // ~~~ Rows
+    // Margin Indicator & Row BG
+
+    {
+      "class": "tree_row",
+      "layer0.tint": "var(c_scheme_tint)",
+      "layer1.texture": "ao-mindori/extras/tree_highlight.png",
+      "layer1.tint": "color(var(c_sign_lite))",
+      "layer1.opacity": { "target": 0.0, "speed": 5.0, "interpolation": "smoothstep" },
+      "layer1.inner_margin": [22, 8, 0, 0],
+      "layer0.inner_margin": [0,0,0,0],
+    },
+    {
+      "class": "tree_row",
+      "attributes": ["selectable", "hover"],
+      "layer0.tint": "var(sidebar_row_selected)",
+      "layer0.opacity": 0.3,
+    },
+    {
+      "class": "tree_row",
+      "attributes": ["selected"],
+      "layer1.opacity": { "target": 1.0, "speed": 5.0, "interpolation": "smoothstep" },
+    },
+
+    // ~~~ Folder Icons - Default
+
+    {
+      "class": "icon_folder",
+      "layer0.tint": "var(c_folder)",
+      "layer0.opacity": 1.0,
+    },
+    {
+      "class": "icon_folder",
+      "parents": [ { "class": "tree_row", "attributes": ["expanded"] } ],
+      "layer0.tint": "var(c_sign_dark)",
+    },
+    {
+      "class": "icon_folder",
+      "parents": [ { "class": "tree_row", "attributes": ["hover"] } ],
+      "layer0.tint": "var(c_sign_strong)",
+    },
+
+    // ~~~ Close Icon
+
+    {
+      "class": "close_button",
+      // Default Close icon
+      "layer0.opacity": { "target": 0.3, "speed": 3.0, "interpolation": "smoothstep" },
+    },
+    {
+      "class": "close_button",
+      "attributes": ["hover"],
+      "layer0.tint": "var(c_red)",
+      "layer0.opacity": 1.0,
+    },
+
+    // ~~ PANELS
+    //
+
+    // ~~~ Labels
+
+    {
+      "class": "label_control",
+      "parents": [{"class": "panel_control"}],
+      "font.face": "JetBrains Mono NL",
+      "font.size": 12,
+    },
+
+    // ~~~ Input Fields
+
+    {
+      "class": "text_area_control",
+      "settings": {
+        "inactive_sheet_dimming": true,
+      },
+      "attributes": ["highlighted"],
+      "parents": [{"class": "text_line_control"}],
+      "background_modifier": "var(text_widget_light_modifier)",
+    },
+
+    // ~~~ Panel Close Button
+
+    {
+      "class": "panel_close_button",
+      "layer0.texture": "ao-mindori/common/panel_close.png",
+      "layer0.tint": "var(shape_tint)",
+      "layer0.opacity": { "target": 0.4, "speed": 4.0, "interpolation": "smoothstep" },
+      "content_margin": 8
+    },
+    {
+      "class": "panel_close_button",
+      "attributes": ["hover"],
+      "layer0.tint": "var(c_red)",
+      "layer0.opacity": { "target": 0.6, "speed": 4.0, "interpolation": "smoothstep" },
+    },
+
+    // ~~~ Bottom Labels & Hover
+
+    {
+      "class": "label_control",
+      "parents": [{"class": "button_control"}],
+      // "font.face" // declared in Labels above
+      // "font.size": 12,
+      "color": "var(c_sign)"
+    },
+    {
+      "class": "button_control",
+      "layer0.texture": "ao-mindori/common/button.png",
+      "layer0.tint": "var(button_bg)",
+      "layer0.opacity": { "target": 0.6, "speed": 4.0, "interpolation": "smoothstep" },
+    },
+    {
+      "class": "button_control",
+      "attributes": ["hover"],
+      "layer0.tint": "var(button_bg_hover)",
+      "layer0.opacity": { "target": 1.0, "speed": 4.0, "interpolation": "smoothstep" },
+    },
+    {
+      "class": "button_control",
+      "attributes": ["pressed"],
+      "layer0.tint": "var(c_header)",
+      "layer0.opacity": { "target": 1, "speed": 4.0, "interpolation": "smoothstep" },
+    },
+    {
+      "class": "label_control",
+      "parents": [{"class": "button_control"}],
+      "attributes": ["pressed"],
+      "color": "var(c_grey_dark)"
+    },
+
+    // ~~ STATUS BAR
+    //
+
+    {
+      "class": "status_bar",
+      "content_margin": [4, 1, 4, 0]  // def [8, 0, 8, 0]
+    },
+    {
+      "class": "sidebar_button_control",
+      // "layer0.tint": "var(c_grey_7)",  // extra
+      // "content_margin": [10, 9],  // def [10, 11]
+      "content_margin": 0  // disable icon
+    },
+    {
+      "class": "sidebar_button_control",
+      "attributes": ["hover"],
+      "layer0.opacity": { "target": 0.6, "speed": 4.0, "interpolation": "smoothstep" },
+    },
+    {
+      "class": "label_control",
+      "parents": [{"class": "status_bar"}],
+      "font.size": 12,
+      // "font.face": "Open Sans Condensed SemiBold",
+      "font.face": "Consolas Bold",
+    },
+    {
+      "class": "vcs_changes_annotation",
+      // "font.face": "var(font_face)",
+      "font.size": 10,
+    },
+    {
+      "class": "status_button",
+      "content_margin": [8, 0, 8, 0],  // def [10, 0, 10, 0]
+      "min_size": [10, 0]  // def [80, 0]
+    },
+  ]
+}

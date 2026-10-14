@@ -1,0 +1,38 @@
+// last.261014
+// init.261014
+{
+  "extends": "ao-mindori Dark.sublime-theme",
+  "variables": {
+    "ui_bg": "color(var(--background) blend(black 80%))",
+    "base_hue": "var(ui_bg)",
+    "overlay_bg": "var(ui_bg)",
+    // Unfocused inputs, on the widget scheme's background.
+    "text_widget_dark_modifier": "s(9.7%) l(+ 1%)"
+  },
+//
+// ~ RULES
+//
+// Dark with Adaptive's themed title bar: the menu goes under a burger
+// button. The UI, title bar and tab bar take ui_bg, from the colour
+// scheme's background.
+//
+  "rules":
+  [
+    {
+      "class": "title_bar",
+      "settings": ["themed_title_bar"],
+      "fg": "color(var(--background) blend(white 30%))",
+      "bg": "var(ui_bg)",
+      "style": "dark"
+    },
+    {
+      "class": "tabset_control",
+      "layer0.tint": "var(ui_bg)"
+    },
+    // Inactive tabs show layer0, tinted as the tab bar.
+    {
+      "class": "tab_control",
+      "layer0.tint": "var(ui_bg)"
+    }
+  ]
+}
